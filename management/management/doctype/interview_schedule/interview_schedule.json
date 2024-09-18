@@ -1,0 +1,122 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{candidate_name}-{role_applied}-{interviewer}",
+ "creation": "2024-09-11 00:11:52.358971",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "candidate_name",
+  "interviewer",
+  "date",
+  "interview_time",
+  "role_applied",
+  "column_break_wryk",
+  "status",
+  "round",
+  "feedback"
+ ],
+ "fields": [
+  {
+   "fieldname": "candidate_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Candidate Name",
+   "options": "Candidates Data",
+   "reqd": 1
+  },
+  {
+   "fieldname": "interviewer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Interviewer Name ",
+   "options": "Interviewer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_wryk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "interview_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Interview Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Hired\nRejected\nIn Progress",
+   "reqd": 1
+  },
+  {
+   "fieldname": "round",
+   "fieldtype": "Select",
+   "label": "Interview Type",
+   "options": "Virtual\nIn-person.",
+   "reqd": 1
+  },
+  {
+   "fieldname": "feedback",
+   "fieldtype": "Small Text",
+   "label": "Feedback"
+  },
+  {
+   "fetch_from": "candidate_name.applied_role",
+   "fieldname": "role_applied",
+   "fieldtype": "Data",
+   "label": "Role Applied",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-09-11 13:01:18.306893",
+ "modified_by": "Administrator",
+ "module": "Management",
+ "name": "Interview Schedule",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Green",
+   "title": "Hired"
+  },
+  {
+   "color": "Red",
+   "title": "Rejected"
+  },
+  {
+   "color": "Yellow",
+   "title": "In Progress"
+  }
+ ]
+}
